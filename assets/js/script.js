@@ -46,7 +46,7 @@ $(document).on("change", "select.playlist", function() {
         });
 });
 
-// с songId работаем в этой функции
+// songId определяем следующим образом
 $(document).on("click", "img.optionsButton", function(){
     songId = $(this).prev(".songId").val();
 });
@@ -75,6 +75,19 @@ function openPage(url){
     $("body").scrollTop(0);
     // В HTML документе метод history.pushState() добавляет новое состояние в историю браузера
     history.pushState(null, null, url);
+}
+
+function removeFromPlaylist(button, playlistId){
+    // var songId = $(button).prevAll(".songId").val();
+    $.post("includes/handlers/ajax/removeFromPlaylist.php", {playlistId: playlistId, songId: songId})
+    .done(function(error){
+        if(error != ""){
+            alert(error);
+            return;
+        }
+        // делаем что-то когда ajax отработал
+        openPage("playlist.php?id=" + playlistId);
+    });
 }
 
 function createPlaylist(){
@@ -115,7 +128,7 @@ function hideOptionsMenu(){
 }
 
 function showOptionsMenu(button){
-    var songId = $(button).prevAll(".songId").val();
+    // var songId = $(button).prevAll(".songId").val();
     var menu = $(".optionsMenu");
     var menuWidth = menu.width();
     menu.find(".songId").val(songId);
@@ -135,6 +148,7 @@ function hideOptionsMenu(){
 }
 
 function showOptionsMenu(button){
+    var songId = $(button).prevAll(".songId").val();
     var menu = $(".optionsMenu");
     var menuWidth = menu.width();
     // distance from top of window to top of document

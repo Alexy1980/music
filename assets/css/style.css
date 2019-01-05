@@ -523,7 +523,7 @@ input:focus {
 
 .optionsMenu .item {
     width: 100%;
-    padding: 12px 20px;
+    padding: 12px 15px;
     box-sizing: border-box;
     font-weight: 400;
     color: rgba(147, 147, 147, 0.8);
@@ -546,4 +546,8 @@ input:focus {
      */
     -webkit-appearance: none;
     -moz-appearance: none;
+}
+
+.userInfo h1 {
+    text-align: center;
 }

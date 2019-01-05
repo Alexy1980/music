@@ -15,4 +15,12 @@ class User
     public function getUsername(){
         return $this->username;
     }
+
+    public function getFirstAndLastName(){
+        $stmt = $this->pdo->prepare("SELECT concat(firstName, ' ', lastName) AS `name` FROM `users` WHERE `username` = :username");
+        $stmt->bindParam(":username", $this->username, PDO::PARAM_STR);
+        $stmt->execute();
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $row['name'];
+    }
 }

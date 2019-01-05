@@ -82,4 +82,5 @@ else {
     <input type="hidden" class="songId">
     <!--$userLoggedIn содержит экз. класса User-->
     <?php echo Playlist::getPlaylistsDropdown($pdo, $userLoggedIn->getUsername()); ?>
+    <div class="item" onclick="removeFromPlaylist(this, '<?php echo $playlistId; ?>')">Удалить из плейлиста</div>
 </nav>
