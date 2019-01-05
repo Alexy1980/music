@@ -11,7 +11,7 @@ function getDownloadLink(){
             $get = trim(strip_tags($_POST['artist']));
         }
 
-        curl_setopt($curl,CURLOPT_URL, "https://givemp3.com/show/".$get);
+        curl_setopt($curl,CURLOPT_URL, "https://usermusic.org/search/".$get);
         curl_setopt($curl,CURLOPT_RETURNTRANSFER,true);
         curl_setopt($curl,CURLOPT_TIMEOUT,60);
 
