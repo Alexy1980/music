@@ -11,7 +11,7 @@ include("includes/includedFiles.php");
         </div>
     </div>
     <div class="buttonItems">
-        <button class="button">Профиль пользователя</button>
-        <button class="button">ВЫЙТИ</button>
+        <button class="button" onclick="openPage('updateDetails.php')">Профиль пользователя</button>
+        <button class="button" onclick="logout()">ВЫЙТИ</button>
     </div>
 </div>

@@ -1,5 +1,5 @@
 <?php
-
+// если ajax запрос
 if(isset($_SERVER['HTTP_X_REQUESTED_WITH'])){
     // если запрос типа ajax
     include "includes/config.php";
