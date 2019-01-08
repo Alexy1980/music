@@ -10,7 +10,7 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH'])){
     include 'includes/classes/Playlist.php';
 
     if(isset($_GET['userLoggedIn'])){
-        $userLoggedIn = new User($pdo, $_GET['userLoggedIn']);
+        $userLoggedIn = new User($pdo, $_SESSION['userLoggedIn']);
     } else {
         echo "Переменная username не передана!";
         exit();
