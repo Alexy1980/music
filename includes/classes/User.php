@@ -23,4 +23,12 @@ class User
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
         return $row['name'];
     }
+
+    public function getEmail(){
+        $stmt = $this->pdo->prepare("SELECT * FROM `users` WHERE `username` = :username");
+        $stmt->bindParam(":username", $this->username, PDO::PARAM_STR);
+        $stmt->execute();
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $row['email'];
+    }
 }

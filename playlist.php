@@ -4,6 +4,7 @@ if(isset($_GET['id'])) {
     $playlistId = $_GET['id'];
     $playlist = new Playlist($pdo, $playlistId);
     $owner = new User($pdo, $playlist->getOwner());
+    echo $owner->getUsername();
 }
 else {
     header("Location: index.php");

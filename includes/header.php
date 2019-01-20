@@ -9,7 +9,7 @@ include 'includes/classes/Playlist.php';
 if(isset($_SESSION['userLoggedIn'])){
     // $userLoggedIn = $_SESSION['userLoggedIn'];
     $userLoggedIn = new User($pdo, $_SESSION['userLoggedIn']);
-    $username = $userLoggedIn->getFirstAndLastName();
+    $username = $userLoggedIn->getUsername();
     // $userLoggedIn - Vasya
     echo "<script>userLoggedIn = '$username';</script>";
 } else {
